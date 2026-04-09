@@ -10,4 +10,3 @@ Solutions for R Basic certification.
 - **Challenge Rundown**: Read problem statements in rendered Markdown.
 - **Action Tools**: Copy code to clipboard or download scripts directly.
 - **Search & Filter**: Quickly find specific challenges.
-- **Premium Design**: Sleek dark mode with glassmorphism aesthetics.
