@@ -22,19 +22,16 @@ body {
     min-height: 100vh;
 }
 
-/* Remove Blobs */
 .bg-blob {
     display: none;
 }
 
-/* Layout */
 .app-container {
     display: grid;
     grid-template-columns: 300px 1fr;
     height: 100vh;
 }
 
-/* Sidebar */
 aside {
     background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
@@ -119,7 +116,6 @@ aside {
     text-transform: uppercase;
 }
 
-/* Main Content */
 main {
     padding: 3rem 4rem;
     overflow-y: auto;
@@ -142,7 +138,6 @@ h1 {
     font-weight: 700;
 }
 
-/* Tabs */
 .tabs {
     display: flex;
     gap: 1.5rem;
@@ -178,7 +173,6 @@ h1 {
     background: var(--accent);
 }
 
-/* Markdown & Code */
 .markdown-body {
     font-size: 0.95rem;
     line-height: 1.6;
@@ -208,7 +202,6 @@ code[class*="language-"] {
     font-size: 0.85rem !important;
 }
 
-/* Action Buttons */
 .action-btn {
     background: white;
     border: 1px solid var(--border);
@@ -229,7 +222,6 @@ code[class*="language-"] {
     background: var(--sidebar-bg);
 }
 
-/* Summary Stats */
 .github-stats {
     margin-top: 2rem;
     display: flex;
@@ -253,7 +245,6 @@ code[class*="language-"] {
     color: var(--text-secondary);
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .app-container {
         grid-template-columns: 1fr;

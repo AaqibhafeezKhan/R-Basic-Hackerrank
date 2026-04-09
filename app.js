@@ -9,7 +9,6 @@ async function init() {
         renderChallengeList();
         lucide.createIcons();
         
-        // Update total stats
         document.getElementById('stat-challenges').textContent = challenges.length;
     } catch (error) {
         console.error('Error loading manifest:', error);
@@ -29,7 +28,6 @@ function renderChallengeList() {
 async function selectChallenge(id) {
     activeChallenge = challenges.find(c => c.id === id);
     
-    // Update UI
     document.querySelectorAll('.challenge-item').forEach(el => {
         el.classList.toggle('active', el.dataset.id === id);
     });
@@ -52,7 +50,6 @@ async function loadContent() {
     const fileName = currentTab === 'question' ? 'Question.md' : 'Solution.R';
     const filePath = `${encodeURIComponent(dir)}/${fileName}`;
 
-    // Show/hide code actions
     actionPanel.style.display = currentTab === 'solution' ? 'flex' : 'none';
 
     try {
@@ -103,7 +100,6 @@ function downloadSolution() {
     a.click();
 }
 
-// Search Logic
 document.getElementById('challenge-search').addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const items = document.querySelectorAll('.challenge-item');
@@ -122,5 +118,4 @@ function escapeHtml(unsafe) {
          .replace(/'/g, "&#039;");
 }
 
-// Initializing
 document.addEventListener('DOMContentLoaded', init);

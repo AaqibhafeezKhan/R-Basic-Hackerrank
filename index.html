@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R-Basic Solutions Dashboard</title>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
-    <!-- Markdown Rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar Navigation -->
         <aside>
             <div class="logo-container">
                 <div class="logo-icon">
@@ -28,19 +22,15 @@
                 </div>
                 <h2 style="font-size: 1.25rem;">R-Basic</h2>
             </div>
-
             <div style="position: relative;">
                 <input type="text" id="challenge-search" placeholder="Search challenges...">
                 <i data-lucide="search" size="14" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
             </div>
-
             <div>
                 <p style="font-size: 0.65rem; color: var(--text-secondary); margin-bottom: 0.75rem; font-weight: 700; letter-spacing: 0.5px;">COLLECTION</p>
                 <div id="challenge-list" class="challenge-list">
-                    <!-- Loaded dynamically -->
                 </div>
             </div>
-
             <div style="margin-top: auto;">
                 <a href="https://github.com/AaqibhafeezKhan/R-Basic-Hackerrank" target="_blank" style="text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
                     <i data-lucide="github" size="16"></i>
@@ -48,8 +38,6 @@
                 </a>
             </div>
         </aside>
-
-        <!-- Main Content Area -->
         <main id="app-main">
             <div id="welcome-screen">
                 <div class="header-section">
@@ -59,7 +47,6 @@
                         Select a challenge from the sidebar to view the requirements and solutions.
                     </p>
                 </div>
-                
                 <div class="github-stats">
                     <div class="stat-card">
                         <p>Total Challenges</p>
@@ -71,13 +58,11 @@
                     </div>
                 </div>
             </div>
-
             <div id="challenge-view" style="display: none;">
                 <div class="header-section">
                     <div id="current-badge" class="title-badge">Category</div>
                     <h1 id="current-title">Challenge Title</h1>
                 </div>
-
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); margin-bottom: 2rem;">
                     <div class="tabs">
                         <div class="tab active" onclick="switchTab('question')">Question</div>
@@ -92,14 +77,11 @@
                         </button>
                     </div>
                 </div>
-
                 <div id="content-display" class="markdown-body">
-                    <!-- Content injected here -->
                 </div>
             </div>
         </main>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
