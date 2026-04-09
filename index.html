@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-Basic Solutions Dashboard</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
+    <!-- Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="bar-chart-3" color="white"></i>
+                </div>
+                <h2 style="font-weight: 600; letter-spacing: -0.5px;">R-Basic</h2>
+            </div>
+
+            <div style="margin-top: 1.5rem; position: relative;">
+                <input type="text" id="challenge-search" placeholder="Search challenges..." style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 0.75rem 1rem 0.75rem 2.5rem; border-radius: 10px; color: white; font-size: 0.85rem; outline: none;">
+                <i data-lucide="search" size="16" style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 1rem;">COLLECTION</p>
+                <div id="challenge-list" class="challenge-list">
+                    <!-- Loaded dynamically -->
+                    <div class="loading-shimmer" style="height: 60px; border-radius: 12px; background: rgba(255,255,255,0.05);"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2rem;">
+                <a href="https://github.com/AaqibhafeezKhan/R-Basic-Hackerrank" target="_blank" style="text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                    <i data-lucide="github" size="18"></i>
+                    View Repository
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="app-main">
+            <div id="welcome-screen" class="content-viewer">
+                <div class="header-section">
+                    <span class="title-badge">Overview</span>
+                    <h1>Welcome to R-Basic Solutions</h1>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; max-width: 600px; line-height: 1.6;">
+                        Explore a curated collection of R programming solutions for basic certifications. Select a challenge from the sidebar to view the requirements and implementation details.
+                    </p>
+                </div>
+                
+                <div class="github-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                        <i data-lucide="code-2" style="color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                        <h4 id="stat-challenges">3</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Total Challenges</p>
+                    </div>
+                    <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                        <i data-lucide="check-circle" style="color: var(--accent-secondary); margin-bottom: 1rem;"></i>
+                        <h4>100%</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="challenge-view" class="content-viewer" style="display: none;">
+                <div class="header-section">
+                    <div id="current-badge" class="title-badge">Category</div>
+                    <h1 id="current-title">Challenge Title</h1>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem;">
+                    <div class="tabs" style="border-bottom: none; margin-bottom: 0;">
+                        <div class="tab active" onclick="switchTab('question')">Question</div>
+                        <div class="tab" onclick="switchTab('solution')">Solution</div>
+                    </div>
+                    <div id="code-actions" style="display: none; gap: 0.75rem; padding-bottom: 0.75rem;">
+                        <button onclick="copyCode()" class="action-btn" title="Copy Code">
+                            <i data-lucide="copy" size="16"></i>
+                        </button>
+                        <button onclick="downloadSolution()" class="action-btn" title="Download .R">
+                            <i data-lucide="download" size="16"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="content-display" class="markdown-body">
+                    <!-- Content injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

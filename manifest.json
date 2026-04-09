@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pivot-data",
+    "title": "Pivot Data by Years and Months",
+    "directory": "Pivot Data by Years and Months",
+    "category": "Data Wrangling"
+  },
+  {
+    "id": "temperature-analysis",
+    "title": "Temperature Analysis",
+    "directory": "Temperature Analysis",
+    "category": "Analysis"
+  },
+  {
+    "id": "tweets-sentiment",
+    "title": "Tweets Sentiment Analysis",
+    "directory": "Tweets Sentiment Analysis",
+    "category": "NLP"
+  }
+]
